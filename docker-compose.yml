@@ -1,0 +1,1 @@
+version: '3.8'\n\nservices:\n  db:\n    image: postgres:latest\n    restart: always\n    environment:\n      POSTGRES_USER: user\n      POSTGRES_PASSWORD: password\n      POSTGRES_DB: shop\n    ports:\n      - '5432:5432'\n\n  redis:\n    image: redis:latest\n    restart: always\n    ports:\n      - '6379:6379'\n\nnetworks:\n  default:\n    driver: bridge\n
